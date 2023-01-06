@@ -1,25 +1,24 @@
-﻿namespace Logical_Programming
+﻿using System.Diagnostics;
+
+namespace Logical_Programming
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the Number to get Reverse Number : ");
-            int ReNum = Convert.ToInt32(Console.ReadLine());
-
-            int Reverse = 0, rem;
-
-            while (ReNum != 0)
+            Console.WriteLine("Enter the Number for how many times to print the statement to get time elapsed for it : ");
+            int s = Convert.ToInt32(Console.ReadLine());
+            Stopwatch stopWatch = new Stopwatch();
+            stopWatch.Start();
+            for (int i = 0; i < s; i++)
             {
-                rem = ReNum % 10;
-                Reverse = (Reverse * 10) + rem;
-                ReNum /= 10;
+                Console.WriteLine("Hello Rushikesh Jadhav");
             }
-            Console.WriteLine("Reverse Number is : " + Reverse);
-
+            stopWatch.Stop();
+            Console.WriteLine("Time Elapsed : {0}", stopWatch.Elapsed);
         }
-
     }
 
 }
+
 
