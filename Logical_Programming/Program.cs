@@ -4,20 +4,27 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter the Number of Elements : ");
+            Console.WriteLine("Enter the Number to Check Number is Prime or Not : ");
             int Number = Convert.ToInt32(Console.ReadLine());
+            int flag = 0;
 
-            int num1 = 0, num2 = 1, num3;
-
-            Console.Write("Fibonacci Series is : ");
-            for (int i = 1; i <= Number; i++)
+            for (int i = 2; i < Number; i++)
             {
-                num3 = num1 + num2;
-                Console.Write(num3 + " ");
-                num1 = num2;
-                num2 = num3;
+                if (Number % i == 0)
+                {
+                    Console.WriteLine(Number + " is not Prime Number");
+                    flag = 1;
+                    break;
+                }
             }
+            if (flag == 0)
+            {
+                Console.WriteLine(Number + " is Prime Number");
 
+            }
         }
+
     }
+
 }
+
